@@ -18,10 +18,10 @@ for i in range(restricciones):
     if len (row)!=variables:
         sys.exit("Error:Numero de coeficientes no coincide con las variables.")
     A.append(row)
-    parametro= float(input(f"Restriccion {i+1} -- lado derecho (<=) :"))
+    parametro= float(input(f"Restriccion {i+1} -- lado derecho (≤) :"))
     if parametro<0:
         print("advertencia: parametro < 0. Multiplique la restriccion por -1 manualmente")
     B.append(parametro)
 if not maximizar:
     coeficientes=[-x for x in coeficientes]
-np.array(coeficientes),np.array(A), np.array(B),maximizar 
+np.array(coeficientes),np.array(A), np.array(B),maximizar
