@@ -24,4 +24,4 @@ for i in range(restricciones):
     B.append(parametro)
 if not maximizar:
     coeficientes=[-x for x in coeficientes]
-np.array(coeficientes),np.array(A), np.array(B),maximizar
+np.array(coeficientes),np.array(A), np.array(B),maximizar 
