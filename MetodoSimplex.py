@@ -87,3 +87,23 @@ for i in range(restricciones):
     B.append(parametro)
 if not maximizar:
     coeficientes=[-x for x in coeficientes]
+
+try:
+    resultado=simplex(np.array(coeficientes), np.array(A), np.array(B),maximizar)
+    print("\n=== Resultado ===" )
+    if resultado["estatus"]=="optimo":
+        print( f"iteraciones: {resultado['iteraciones']}")
+        print("variables Optimas:")
+        for i in range(A.shape[1]):
+            print(f"X{i+1} = {resultado['variables'][i]:.3}")
+        print(f"Valor objetivo Z = {resultado['valor']:.3}")
+        print("\n=== Tabla Final ===")
+        print(resultado["tabla"])
+    elif resultado["estatus"]=="sin limite":
+        print("Solucion illimitada")
+    else:
+        print(f"{resultado['estatus']}")
+except ValueError as e:
+    print(f"Error en entrada: {e}")
+except Exception as e:
+    print(f"Error inesperado: {e}")
